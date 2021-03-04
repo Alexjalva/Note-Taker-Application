@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 let notes;
-fs.readFile('./db/db.json', "utf8", (err,data) => {
+fs.readFile('/db/db.json', "utf8", (err,data) => {
 if(err){ throw err;}
 notesArray=JSON.parse(data);
 });
@@ -18,7 +18,7 @@ module.exports = (app) => {
 
     let newNote = req.body;
     notesArray.push(newNote);
-    fs.writeFile('./db/db.json', JSON.stringify(notes), err => {
+    fs.writeFile('/db/db.json', JSON.stringify(notes), err => {
         if(err) {
             throw err;
         }
