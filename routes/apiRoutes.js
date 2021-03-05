@@ -25,6 +25,9 @@ module.exports = (app) => {
             throw err;
         }
     }); 
+
+    console.log(`posted note ${newNote}`);
+    res.redirect('/');
   });
 
 
